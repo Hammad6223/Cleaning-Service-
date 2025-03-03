@@ -1,0 +1,32 @@
+
+  .nav-Content .nav-link.active {
+    background: linear-gradient(to right, rgba(59, 130, 246, 1), rgba(35, 76, 144, 1));
+    color: white !important;
+    border-radius: 50px;
+    border: none;
+    width: 164px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Normal Tab Button Styling */
+  .nav-Content .nav-link {
+    color:rgba(4, 40, 98, 1);
+    font-size: 14px;
+    width: 164px;
+    font-weight: 500;
+    height: 34px;
+    text-align: center;
+  }
+  
+  /* Adjusts Button Styling */
+  .nav-Content .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-link {
+    color:rgba(4, 40, 98, 1);
+  }

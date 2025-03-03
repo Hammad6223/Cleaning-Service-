@@ -1,0 +1,22 @@
+.text-color{
+    color: rgba(4, 40, 98, 1) ;
+}
+.bg1{
+    background-color: rgba(231, 240, 254, 1);
+}
+
+
+.text{
+    color: rgba(59, 131, 246, 1);
+
+}
+.heading-content{
+    border-top: 1px solid  rgba(60, 131, 246, 1);
+}
+.footer-content{
+    color: rgba(4, 40, 98, 1) ;
+    border-top: 1px dashed  rgba(4, 40, 98, 1);
+
+    /* border-width: thick; */
+
+}
