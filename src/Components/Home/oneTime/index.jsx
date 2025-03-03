@@ -1,19 +1,23 @@
+import { useState } from "react";
 import { Link } from "react-router";
 const OnetimeInputsreen = () => {
+  const [data, setData] =useState(500);
   return (
     <>
       <div>
         <div
           className=" text-center text-white "
-          style={{ marginTop: "160px" }}
+          style={{ marginTop: "150px" }}
         >
-          <p className="fw-medium" style={{ fontSize: "26px" }}>
+          <p className="fw-medium" style={{ fontSize: "40px" }}>
             Enter Your Space Size (Sq. Ft.)
           </p>
         </div>
         <div className=" d-flex align-items-center justify-content-center mt-4 ">
           <button
             className=" border-0 rounded text-center d-flex align-items-center justify-content-center "
+            onClick={() => setData((prev) => (prev > 500 ? prev - 100 : prev))}
+
             style={{
               width: "40px",
               height: "40px",
@@ -22,14 +26,15 @@ const OnetimeInputsreen = () => {
           >
             <h1>-</h1>
           </button>
-          <h3
-            className=" text-white text-center fw-semibold mx-3 p-3"
+          <h2
+            className=" text-white text-center fw-semibold mx-3 p-3" onChange={(e)=> setData(Number(e.target.value))}
             style={{ width: "232px", borderBottom: "1px solid white" }}
           >
-            0 sq ft
-          </h3>
+             {data} sq ft
+          </h2>
           <button
             className=" border-0 rounded text-center d-flex align-items-center justify-content-center"
+            onClick={() =>setData((prev)=>prev+100)}
             style={{
               width: "40px",
               height: "40px",
@@ -45,7 +50,7 @@ const OnetimeInputsreen = () => {
             <button
               className="mb-4 rounded border-0 fw-semibold p-2"
               style={{
-                width: "173px",
+                width: "157px",
                 fontSize: "16px",
                 height: "39px",
                 color: "rgba(59, 131, 246, 1)",

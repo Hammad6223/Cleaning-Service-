@@ -4,7 +4,7 @@
     color: white !important;
     border-radius: 50px;
     border: none;
-    width: 164px;
+    width: 193px;
     height: 36px;
     display: flex;
     justify-content: center;
@@ -14,8 +14,8 @@
   /* Normal Tab Button Styling */
   .nav-Content .nav-link {
     color:rgba(4, 40, 98, 1);
-    font-size: 14px;
-    width: 164px;
+    font-size: 16px;
+    width: 200px;
     font-weight: 500;
     height: 34px;
     text-align: center;

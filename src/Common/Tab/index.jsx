@@ -6,11 +6,19 @@ import "bootstrap/js/dist/tab";
 const PackageTab = () => {
   return (
     <>
-     
       {/* Navigation Tabs */}
       <div className="d-flex justify-content-center">
-        <ul className="nav nav-Content d-flex justify-content-center border border-bottom p-0 m-0 bg-white" id="pills-tab" role="tablist" style={{ boxShadow: "0px 3px 20px 0px rgba(0, 0, 0, 0.15) inset",
-    borderRadius: "50px",width:"332px", height:"40px"}}>
+        <ul
+          className="nav nav-Content d-flex justify-content-center border border-bottom p-0 m-0 bg-white"
+          id="pills-tab"
+          role="tablist"
+          style={{
+            boxShadow: "0px 3px 20px 0px rgba(0, 0, 0, 0.15) inset",
+            borderRadius: "50px",
+            width: "400px",
+            height: "40px",
+          }}
+        >
           <li className="nav-item" role="presentation">
             <button
               className="nav-link active "
@@ -44,11 +52,21 @@ const PackageTab = () => {
 
       {/* Tab Content */}
       <div className="tab-content" id="pills-tabContent">
-        <div className="tab-pane fade show active" id="pills-OneTime" role="tabpanel" aria-labelledby="pills-oneTime-tab">
+        <div
+          className="tab-pane fade show active"
+          id="pills-OneTime"
+          role="tabpanel"
+          aria-labelledby="pills-oneTime-tab"
+        >
           {/* Content for One-Time Service */}
         </div>
 
-        <div className="tab-pane fade" id="pills-MonthlyRecurring" role="tabpanel" aria-labelledby="pills-MonthlyRecurring-tab">
+        <div
+          className="tab-pane fade"
+          id="pills-MonthlyRecurring"
+          role="tabpanel"
+          aria-labelledby="pills-MonthlyRecurring-tab"
+        >
           {/* Content for Monthly Recurring Service */}
         </div>
       </div>
