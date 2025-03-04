@@ -3,12 +3,12 @@ import { essentailData } from "./Essential/essentialData";
 import Logo from "../../Common/Logo";
 import { Form } from "react-bootstrap";
 import "./index.css";
-import { FoooterCards } from "./Essential/Essentailcards";
 import { CoreCareFooter } from "./CoreCare/Corecarecards";
 import { coreCareData } from "./CoreCare/coreCareData";
 import Info from "../../Images/Info-img.png";
 import { Link } from "react-router";
 import { PiLessThanLight } from "react-icons/pi";
+import FooterCards from "./Essential/Essentailcards";
 
 const OneTimeServices = (essentialData) => {
   const [data, setData] = useState();
@@ -37,7 +37,7 @@ const OneTimeServices = (essentialData) => {
 
           <div className="row d-flex justify-content-between mt-5 gx-4">
             {/* First Column */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 mb-4 mb-lg-0">
               <div className="d-flex flex-column justify-content-between rounded-4 py-3 h-100"
               style={{border: "2px solid rgba(7, 60, 146, 1)",
                 display: "flex",
@@ -63,6 +63,8 @@ const OneTimeServices = (essentialData) => {
                         id={item.id}
                         label={item.label}
                         className="fs-6 fw-normal p-1"
+                        checked
+                        readOnly
                       />
                     ))}
                   </Form.Group>
@@ -70,7 +72,7 @@ const OneTimeServices = (essentialData) => {
 
                 {/* Lower Section */}
                 <div className="d-flex flex-column align-items-center gap-3">
-                  <FoooterCards />
+                  <FooterCards />
                   <Link to="/price">
                     <button
                       className="rounded fw-semibold fs-6 border-0 mt-2"
@@ -89,8 +91,8 @@ const OneTimeServices = (essentialData) => {
             </div>
 
             {/* Second Column */}
-            <div className="col-lg-6">
-              <div className="border rounded-4 d-flex flex-column justify-content-between rounded py-3 h-100"
+            <div className="col-lg-6 mb-4 mb-lg-0">
+            <div className="border rounded-4 d-flex flex-column justify-content-between rounded py-3 h-100"
               style={{ display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between", 
@@ -115,6 +117,8 @@ const OneTimeServices = (essentialData) => {
                         id={item.id}
                         label={item.label}
                         className="fs-6 fw-normal p-1"
+                        checked
+                        readOnly
                       />
                     ))}
                   </Form.Group>
