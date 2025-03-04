@@ -15,7 +15,7 @@ const PackageTab = () => {
           style={{
             boxShadow: "0px 3px 20px 0px rgba(0, 0, 0, 0.15) inset",
             borderRadius: "50px",
-            width: "400px",
+            width: "370px",
             height: "40px",
           }}
         >

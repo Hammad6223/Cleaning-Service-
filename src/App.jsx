@@ -1,10 +1,20 @@
-import Services from "./Pages/Home"
+import { Routes, Route } from "react-router-dom"; 
+import OneTimeServices from "../src/Components/squareFtservices";
+import Price from "../src/Components/Price";
+import HomeContent from "../src/Components/Home";
 
-function App(){
-  return(
+
+const App = () => {
+  return (
     <>
-<Services />
-</>
-  )
-}
-export default App
+    
+    <Routes>
+      <Route path="/" element={<HomeContent />} />
+      <Route path="/onetime-services" element={<OneTimeServices />} />
+      <Route path="/price" element={<Price />} />
+    </Routes>
+    </>
+  );
+};
+
+export default App;
