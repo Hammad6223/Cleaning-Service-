@@ -26,7 +26,7 @@ const Price = () => {
           ))}
         </div>
         {/* Services Section */}
-        <p className="fw-semibold border-top border-primary pt-2 mt-2 fs-5 px-3">Services Include</p>
+        <p className="fw-semibold border-top border-primary pt-2 mt-2 fs-5 mx-3">Services Include</p>
         <div className="row px-3 mb-2">
           {data.map((item) => (
             <div key={item.id} className="col-md-6 col-sm-12 ">
@@ -46,7 +46,7 @@ const Price = () => {
           ))}
         </div>
         {/* Total Cost Section */}
-        <div className="d-flex justify-content-between pt-3 px-3" style={{borderTop:"1px dashed rgba(4, 40, 98, 1)"}}>
+        <div className="d-flex justify-content-between pt-3 mx-3" style={{borderTop:"1px dashed rgba(4, 40, 98, 1)"}}>
           <p className="fs-3 fw-bold" style={{color:"rgba(4, 40, 98, 1)"}}>Total Cost:</p>
           <p className="fs-3 fw-bold "style={{color:"rgba(4, 40, 98, 1)"}}>$129.00</p>
         </div>
