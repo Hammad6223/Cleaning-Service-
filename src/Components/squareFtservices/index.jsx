@@ -101,17 +101,14 @@ const OneTimeServices = () => {
                     backgroundColor: "rgba(59, 130, 246, 1)",
                     height: "40px",
                     width: "40px",
-                    top : "-17px",
-                    right:"-17px",
-                   fontSize:"20px",
-                    color:"white",
-                    fontWeight:"900"
+                    top: "-17px",
+                    right: "-17px",
+                    fontSize: "20px",
+                    color: "white",
+                    fontWeight: "900",
                   }}
                 >
-<MdOutlineDone />
-
-
-
+                  <MdOutlineDone />
                 </div>
               </div>
             </div>
