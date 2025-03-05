@@ -17,7 +17,7 @@ export const CoreCareFooter = () => {
               </h6>
             </div>
             <p className="ps-4 fs-5 fw-medium mt-1" style={{ color: "rgba(59, 130, 246, 1)" }}>
-              1-1.5 hours
+              2-2.5 hours
             </p>
           </Card.Body>
         </Card>
@@ -34,7 +34,7 @@ export const CoreCareFooter = () => {
               </h6>
             </div>
             <p className="ps-4 fs-5 fw-medium mt-1" style={{ color: "rgba(59, 130, 246, 1)" }}>
-              2-3 persons
+              2 Cleaners
             </p>
           </Card.Body>
         </Card>

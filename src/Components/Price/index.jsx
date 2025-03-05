@@ -46,7 +46,7 @@ const Price = () => {
           ))}
         </div>
         {/* Total Cost Section */}
-        <div className="d-flex justify-content-between border-top border-secondary pt-3 px-3">
+        <div className="d-flex justify-content-between pt-3 px-3" style={{borderTop:"1px dashed rgba(4, 40, 98, 1)"}}>
           <p className="fs-3 fw-bold" style={{color:"rgba(4, 40, 98, 1)"}}>Total Cost:</p>
           <p className="fs-3 fw-bold "style={{color:"rgba(4, 40, 98, 1)"}}>$129.00</p>
         </div>

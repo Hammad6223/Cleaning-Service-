@@ -34,7 +34,7 @@ function FooterCards(){
               </h6>
             </div>
             <p className="ps-4 fs-5 fw-medium mt-1" style={{ color: "rgba(59, 130, 246, 1)" }}>
-              2-3 persons
+              1 Cleaner
             </p>
           </Card.Body>
         </Card>
