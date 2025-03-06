@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom"; 
-import OneTimeServices from "../src/Components/squareFtservices";
+import Services from "../src/Components/Services";
 import Price from "../src/Components/Price";
-import HomeContent from "../src/Components/Home";
+import Home from "../src/Components/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
@@ -9,8 +10,8 @@ const App = () => {
     <>
     
     <Routes>
-      <Route path="/" element={<HomeContent />} />
-      <Route path="/onetime-services" element={<OneTimeServices />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/select-services" element={<Services />} />
       <Route path="/price" element={<Price />} />
     </Routes>
     </>
