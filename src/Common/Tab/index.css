@@ -1,0 +1,20 @@
+.nav-Content .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  width: 170px;
+  height: 36px;
+  text-align: center;
+  justify-content: center;
+  color: rgba(4, 40, 98, 1);
+}
+
+.nav-Content .nav-link.active {
+  background: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 1),
+    rgba(35, 76, 144, 1)
+  );
+  color: white !important;
+  text-align: center;
+  border-radius: 50px;
+}

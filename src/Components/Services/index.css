@@ -3,6 +3,9 @@
 .text-primary-dark {
     color: rgba(4, 40, 98, 1);
   }
+  .primary-blue{
+    color:rgba(2, 20, 49, 1);
+  }
   
   .text-primary {
     color: rgba(59, 130, 246, 1);
@@ -11,17 +14,21 @@
   .service-container {
     border: 2px solid rgba(7, 60, 146, 1);
     border-radius: 1rem;
-    padding: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
     position: relative;
   }
   
   .service-card {
-    width: 223px;
-    height: 100px;
+    width: 193px;
+    height: 65px !important; 
+  }
+  .adjust-time{
+    font-size: 18px;
   }
   
   .get-quote-btn {
@@ -31,6 +38,7 @@
     height: 39px;
     font-weight: 600;
     font-size: 1rem;
+    margin-top: 17px;
     border: none;
     border-radius: 5px;
   }

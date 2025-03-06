@@ -14,12 +14,14 @@ const OnetimeInputScreen = () => {
   }, []);
 
   // Increase space size
-  const handleIncrease = useCallback(() => {
-    setData((prev) => prev + 100);
-  }, []);
+// Increase space size (limit 5000 if One-Time)
+const handleIncrease = useCallback(() => {
+  setData((prev) => (isMonthly || prev < 5000 ? prev + 100 : prev));
+}, [isMonthly]);
 
   // Handle tab change for selecting package type
   const handleTabChange = (isMonthlySelected) => {
+    setData(500)
     setIsMonthly(isMonthlySelected);
   };
 

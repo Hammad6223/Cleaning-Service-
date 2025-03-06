@@ -21,6 +21,7 @@
     width: 190px;
     font-weight: 500;
     height: 36px;
+    padding: 0;
     align-items: center;  
     justify-content: center !important;  
     text-align: center;
