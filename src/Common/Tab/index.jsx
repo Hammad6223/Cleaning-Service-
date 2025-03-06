@@ -2,24 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "bootstrap/js/dist/tab";
-
 const PackageTab = () => {
   return (
     <>
       {/* Navigation Tabs */}
       <div className="d-flex justify-content-center">
         <ul
-          className="nav nav-Content d-flex justify-content-center border border-bottom p-0 m-0 bg-white"
+          className="nav nav-pills nav-Content d-flex justify-content-center rounded-pill border border-bottom p-0 bg-white shadow-sm"
           id="pills-tab"
-          role="tablist"
-          style={{
-            boxShadow: "0px 3px 20px 0px rgba(0, 0, 0, 0.15) inset",
-            borderRadius: "50px",
-            width: "370px",
-            height: "40px",
-          }}
-        >
-          <li className="nav-item" role="presentation">
+          role="tablist">
+          <li className="nav-item">
             <button
               className="nav-link active "
               id="pills-oneTime-tab"
@@ -27,8 +19,6 @@ const PackageTab = () => {
               data-bs-target="#pills-OneTime"
               type="button"
               role="tab"
-              aria-controls="pills-OneTime"
-              aria-selected="true"
             >
               One-Time
             </button>
@@ -41,8 +31,6 @@ const PackageTab = () => {
               data-bs-target="#pills-MonthlyRecurring"
               type="button"
               role="tab"
-              aria-controls="pills-MonthlyRecurring"
-              aria-selected="false"
             >
               Monthly-Recurring
             </button>
@@ -51,27 +39,25 @@ const PackageTab = () => {
       </div>
 
       {/* Tab Content */}
+                {/* Content for One-Time Service */}
+
       <div className="tab-content" id="pills-tabContent">
         <div
           className="tab-pane fade show active"
           id="pills-OneTime"
           role="tabpanel"
-          aria-labelledby="pills-oneTime-tab"
         >
-          {/* Content for One-Time Service */}
         </div>
-
+  {/* Content for Monthly Recurring Service */}
         <div
           className="tab-pane fade"
           id="pills-MonthlyRecurring"
           role="tabpanel"
           aria-labelledby="pills-MonthlyRecurring-tab"
         >
-          {/* Content for Monthly Recurring Service */}
         </div>
       </div>
     </>
   );
 };
-
 export default PackageTab;

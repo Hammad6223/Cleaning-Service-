@@ -1,4 +1,5 @@
-const Footer = () => {
+
+ const Footer = () => {
   return (
     <>
       <div className="container-fluid">
@@ -15,31 +16,31 @@ const Footer = () => {
             How It Works
           </p>
           <div className="col-lg-4 py-3 text-center">
-            <p className="fs-4 fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
+            <h4 className=" fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
               {" "}
               Specify Your Area
-            </p>
-            <p style={{ color: "rgba(113, 113, 113, 1)",fontSize:"18px" }}>
+            </h4>
+            <p style={{ color: "rgba(113, 113, 113, 1)" }}>
               Tell us the size of the area that needs <br />
               <span>cleaning.</span>
             </p>
           </div>
 
           <div className="col-lg-4 py-3 text-center">
-            <p className="fs-4 fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
+            <h4 className=" fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
               Pick a Service Plan
-            </p>
-            <p style={{ color: "rgba(113, 113, 113, 1)", fontSize:"18px" }}>
+            </h4>
+            <p style={{ color: "rgba(113, 113, 113, 1)" }}>
               Need a one-time clean or regular <br />
               <span>touch-ups? You decide.</span>
             </p>
           </div>
 
           <div className="col-lg-4 py-3 text-center">
-            <p className="fs-4 fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
+            <h4 className=" fw-bold" style={{ color: "rgba(4, 40, 98, 1)" }}>
               Enjoy the Results
-            </p>
-            <p style={{ color: "rgba(113, 113, 113, 1)", fontSize:"18px" }}>
+            </h4>
+            <p style={{ color: "rgba(113, 113, 113, 1)" }}>
               We’ll make your space shine while <br />
               <span> you enjoy your time.</span>
             </p>
@@ -49,4 +50,4 @@ const Footer = () => {
     </>
   );
 };
-export default Footer;
+export default Footer
