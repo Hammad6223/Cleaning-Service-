@@ -1,0 +1,87 @@
+.bg_image {
+  background-image: url('../../assets/Images/Bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 70px);
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-button {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+
+.nav-Content .nav-link.active {
+  background: linear-gradient(to right, rgba(59, 130, 246, 1), rgba(35, 76, 144, 1));
+  color: white !important;
+  border-radius: 50px;
+  font-size: 16px;
+  border: none;
+  width: 175px;
+  height: 36px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+
+}
+
+/* Normal Tab Button Styling */
+.nav-Content .nav-link {
+  color: rgba(4, 40, 98, 1);
+  font-size: 16px;
+  width: 190px;
+  font-weight: 500;
+  height: 36px;
+  padding: 0;
+  align-items: center;
+  justify-content: center !important;
+  text-align: center;
+
+}
+
+/* Adjusts Button Styling */
+.nav-Content .nav-item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgba(4, 40, 98, 1);
+}
+
+@media(max-width: 768px) {
+  .heading-text {
+    font-size: 28px !important;
+  }
+}
+
+@media(max-width: 576) {
+  .heading-text {
+    font-size: 24px !important;
+  }
+}
+
+@media(max-width: 480) {
+  .heading-text {
+    font-size: 24px;
+  }
+}
