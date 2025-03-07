@@ -5,7 +5,7 @@ export const oneTimeServices = {
       requiredStaff: "1-2",
       sqftMin: 0,
       sqftMax: 1000,
-      cleaningTime: "2-2.5 hours/session",
+      cleaningTime: "2-2.5 hours",
       services: [
         { id: "1", label: "General cleaning (vacuuming, dusting, trash removal)" },
         { id: "2", label: "Basic carpet maintenance" },
@@ -47,7 +47,7 @@ export const oneTimeServices = {
       requiredStaff: "1-2",
       sqftMin: 0,
       sqftMax: 1000,
-      cleaningTime: "2-2.5 hours/session",
+      cleaningTime: "2-2.5 hours",
       services: [
         { id: "1", label: "General cleaning (vacuuming, dusting, trash removal)" },
         { id: "2", label: "Restroom sanitization and restocking" },
