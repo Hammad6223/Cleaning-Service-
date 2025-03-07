@@ -1,101 +1,141 @@
 /* arrow css */
 
 .text-primary-dark {
-    color: rgba(4, 40, 98, 1);
-  }
-  .primary-blue{
-    color:rgba(2, 20, 49, 1);
-  }
-  
-  .text-primary {
-    color: rgba(59, 130, 246, 1);
-  }
-  
-  .service-container {
-    border: 2px solid rgba(7, 60, 146, 1);
-    border-radius: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    position: relative;
-  }
-  
-  .service-card {
-    width: 193px;
-    height: 65px !important; 
-  }
-  .adjust-time{
-    font-size: 18px;
-  }
-  
-  .get-quote-btn {
-    background-color: rgba(223, 234, 255, 1);
-    color: rgba(59, 130, 246, 1);
-    width: 145px;
-    height: 39px;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-top: 17px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .checkmark-badge {
-    background-color: rgba(59, 130, 246, 1);
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 900;
-    position: absolute;
-    top: -17px;
-    right: -17px;
-  }
+  color: rgba(4, 40, 98, 1);
+}
 
-  
+.primary-blue {
+  color: rgba(2, 20, 49, 1);
+}
+
+.text-primary {
+  color: rgba(59, 130, 246, 1);
+}
+
+.custom-radio input[type="radio"] {
+  display: none;
+}
+
+.custom-radio label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.custom-radio label::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #3b83f6;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.custom-radio input[type="radio"]:checked+label::before {
+  background-color: #3b83f6;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.service-container {
+  border: 2px solid rgba(7, 60, 146, 1);
+  border-radius: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  gap: 1rem;
+  position: relative;
+}
+
+.service-card {
+  width: 210px;
+  height: 65px !important;
+}
+
+.adjust-time {
+  font-size: 18px;
+}
+
+.get-quote-btn {
+  background-color: rgba(223, 234, 255, 1);
+  color: rgba(59, 130, 246, 1);
+  width: 145px;
+  height: 39px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 17px;
+  border: none;
+  border-radius: 5px;
+}
+
+.checkmark-badge {
+  background-color: rgba(59, 130, 246, 1);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 900;
+  position: absolute;
+  top: -17px;
+  right: -17px;
+}
+
+
 .arrow {
- 
-    margin-left: 50px;
-    transform: translate(-50%, -50%);
-    transform: rotate(90deg);
-    cursor: pointer;
+
+  margin-left: 50px;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  cursor: pointer;
 }
 
 .arrow span {
-    display: block;
-    width: 1.5vw;
-    height: 1.5vw;
-    border-bottom: 5px solid black;
-    border-right: 5px solid black;
-    transform: rotate(45deg);
-    margin: -10px;
-    animation: animate 2s infinite;
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
 }
 
 .arrow span:nth-child(2) {
-    animation-delay: -0.2s;
+  animation-delay: -0.2s;
 }
 
 .arrow span:nth-child(3) {
-    animation-delay: -0.4s;
+  animation-delay: -0.4s;
 }
 
 @keyframes animate {
-    0% {
-        opacity: 0;
-        transform: rotate(45deg) translate(-20px, -20px);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: rotate(45deg) translate(20px, 20px);
-    }
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
 }

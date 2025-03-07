@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { oneTimeServices, monthlyServices } from "./Data"; // Ensure correct import path
-import Logo from "../../Common/Logo";
+import Navbar from "../Navbar";
 import { Form, Card, Row, Col } from "react-bootstrap";
 import { MdOutlineDone, MdAccessTime } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { Link } from "react-router-dom";
-import Info from "../../Images/Info-img.png";
+import Info from "../../assets/Images/Info-img.png";
 import "./index.css";
 
 const useQuery = () => {
@@ -47,17 +47,17 @@ const getMonthlyServices = (sqft) => {
   );
 };
 
-
 const OneTimeServices = () => {
   const query = useQuery();
   const sqft = parseInt(query.get("sqft"), 10);
   const isMonthly = query.get("isMonthly") === "true";
   const [filteredServices, setFilteredServices] = useState([]);
-  const [selectedDay, setSelectedDay] =useState(5);
+  const [selectedDay, setSelectedDay] = useState("");
 
-  const handleDayChange = (event) =>{
+  const handleDayChange = (event) => {
     setSelectedDay(event.target.value);
   };
+
   useEffect(() => {
     const services = isMonthly
       ? getMonthlyServices(sqft)
@@ -67,24 +67,26 @@ const OneTimeServices = () => {
 
   return (
     <>
-      <Logo />
+      <Navbar />
       <div className="container">
-      <div className="position-relative">
-    <Link to="/" className="position-absolute start-0 d-none d-md-block">
-      <div className="arrow d-flex flex-column mt-3 pt-2 gap-1">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </Link>
-  </div>
+        <div className="position-relative">
+          <Link to="/" className="position-absolute start-0 d-none d-md-block">
+            <div className="arrow d-flex flex-column mt-3 pt-2 gap-1">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </Link>
+        </div>
 
-  {/* Centered Heading */}
-  <div className="text-center mt-4">
-    <p className="fw-bold fs-2 fs-sm-5 text-primary-dark">
-      {isMonthly ? "Monthly Cleaning Packages" : "One-Time Cleaning Packages"}
-    </p>
-  </div>
+        {/* Centered Heading */}
+        <div className="text-center mt-4">
+          <p className="fw-bold fs-2 fs-sm-5 text-primary-dark">
+            {isMonthly
+              ? "Monthly Cleaning Packages"
+              : "One-Time Cleaning Packages"}
+          </p>
+        </div>
 
         <div className="row justify-content-center mt-5">
           {filteredServices.length > 0 ? (
@@ -115,21 +117,20 @@ const OneTimeServices = () => {
                         Select days per week:
                       </p>
                       <Form.Group className="d-flex justify-content-center">
-  {Object.keys(service.price).map((day, index) => (
-    <Form.Check
-      key={index}
-      type="radio"
-      id={`day-${day}`}
-      name="cleaningDays"
-      label={`${day} Days`}
-      value={day}
-      className="fs-6 fw-normal mx-2"
-      checked={selectedDay === Number(day)} // Ensure type consistency
-      onChange={handleDayChange}
-    />
-  ))}
-</Form.Group>
-
+                        {Object.keys(service.price).map((day, index) => (
+                          <Form.Check
+                            key={index}
+                            type="radio"
+                            id={`day-${day}`}
+                            name="cleaningDays"
+                            label={`${day} Days`}
+                            value={day}
+                            className="fs-6 fw-normal mx-2 custom-radio"
+                            checked={selectedDay === day}
+                            onChange={handleDayChange}
+                          />
+                        ))}
+                      </Form.Group>
                     </>
                   )}
                   <div className="d-flex mt-2 flex-column align-items-center gap-3">
@@ -141,7 +142,7 @@ const OneTimeServices = () => {
                       />
                       <ServiceCard
                         icon={GoPeople}
-                        title="Number of People"
+                        title="Required Staff"
                         value={`${service.requiredStaff} Cleaners`}
                       />
                     </Row>
@@ -151,7 +152,9 @@ const OneTimeServices = () => {
                         JSON.stringify(service)
                       )}`}
                     >
-                      <button className="get-quote-btn">Get A Quote</button>
+                      <button className="get-quote-btn animated-button">
+                        Get A Quote
+                      </button>
                     </Link>
                   </div>
                   <CheckmarkBadge />

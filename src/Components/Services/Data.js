@@ -2,10 +2,10 @@ export const oneTimeServices = {
     essential: {
       serviceName: "One-Time Essential Service",
       price: 129,
-      requiredStaff: "1",
+      requiredStaff: "1-2",
       sqftMin: 0,
       sqftMax: 1000,
-      cleaningTime: "1-1.5 hours",
+      cleaningTime: "2-2.5 hours/session",
       services: [
         { id: "1", label: "General cleaning (vacuuming, dusting, trash removal)" },
         { id: "2", label: "Basic carpet maintenance" },
@@ -44,10 +44,10 @@ export const oneTimeServices = {
         3: 499,
         5: 599,
       },
-      requiredStaff: "1",
+      requiredStaff: "1-2",
       sqftMin: 0,
       sqftMax: 1000,
-      cleaningTime: "1-1.5 hours",
+      cleaningTime: "2-2.5 hours/session",
       services: [
         { id: "1", label: "General cleaning (vacuuming, dusting, trash removal)" },
         { id: "2", label: "Restroom sanitization and restocking" },
