@@ -4,35 +4,52 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const OnetimeInputScreen = () => {
-  const [data, setData] = useState(500);
-  const [isMonthly, setIsMonthly] = useState(false); // Track package type
+  const [data, setData] = useState("500"); // Keep as string for controlled input
+  const [isMonthly, setIsMonthly] = useState(false);
   const navigate = useNavigate();
 
-  // Decrease space size but not below 500
   const handleDecrease = useCallback(() => {
-    setData((prev) => (prev > 500 ? prev - 100 : prev));
+    setData((prev) => {
+      return newValue.toString();
+    });
   }, []);
 
-  // Increase space size
-  // Increase space size (limit 5000 if One-Time)
   const handleIncrease = useCallback(() => {
-    setData((prev) => (isMonthly || prev < 5000 ? prev + 100 : prev));
+    setData((prev) => {
+      const newValue = isMonthly ? Number(prev) + 100 : Math.min(5000, Number(prev) + 100);
+      return newValue.toString();
+    });
   }, [isMonthly]);
 
-  // Handle tab change for selecting package type
   const handleTabChange = (isMonthlySelected) => {
-    setData(500);
+    setData("500");
     setIsMonthly(isMonthlySelected);
   };
 
-  // Navigate with query parameters
-  // const handleShowPackages = useCallback(() => {
-  //   navigate(`/onetime-services?sqft=${data}&isMonthly=${isMonthly}`);
-  // }, [navigate, data, isMonthly]);
+  const handleInputChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Allow only numbers
+    value = value ? Number(value) : 500;
+  
+    // Restrict input within range immediately
+    if (!isMonthly && value > 5000) {
+      value = 5000;
+    }
+  
+    setData(value);
+  };
+
+  // Ensure value is within range when user leaves the field
+  const handleBlur = () => {
+    setData((prev) => {
+      const numValue = Number(prev);
+      if (!isMonthly && numValue < 500) return "500";
+      if (!isMonthly && numValue > 5000) return "5000";
+      return prev;
+    });
+  };
 
   return (
     <div className="bg_image">
-      {/* Navigation Tabs */}
       <div className="d-flex justify-content-center">
         <ul
           className="nav nav-Content d-flex justify-content-center border border-bottom p-0 m-0 bg-white"
@@ -74,7 +91,6 @@ const OnetimeInputScreen = () => {
         </ul>
       </div>
 
-      {/* Space Size Selection */}
       <div className="text-center text-white">
         <p className="fw-medium space-text" style={{ fontSize: "40px" }}>
           Enter Your Space Size (Sq. Ft.)
@@ -95,7 +111,15 @@ const OnetimeInputScreen = () => {
             className="text-white text-center fw-semibold mx-3 p-3"
             style={{ width: "232px", borderBottom: "1px solid white" }}
           >
-            {data} sq ft
+            <input
+              type="text"
+              value={data}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              className="text-center bg-transparent border-0 text-white"
+              style={{ outline: "none", width: "100px" }}
+            />
+            sq ft
           </h2>
           <button
             className="border-0 rounded text-center d-flex align-items-center justify-content-center"
@@ -111,7 +135,6 @@ const OnetimeInputScreen = () => {
         </div>
       </div>
 
-      {/* Navigation Button */}
       <div className="text-center">
         <Link to={`/select-services?sqft=${data}&isMonthly=${isMonthly}`}>
           <button
@@ -123,7 +146,6 @@ const OnetimeInputScreen = () => {
               color: "rgba(59, 131, 246, 1)",
               backgroundColor: "rgba(223, 234, 255, 1)",
             }}
-            // onClick={handleShowPackages}
           >
             Show Packages
           </button>

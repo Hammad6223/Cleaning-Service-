@@ -153,7 +153,7 @@ const OneTimeServices = () => {
                       )}`}
                     >
                       <button className="get-quote-btn animated-button">
-                        Get A Quote
+                      View Estimate
                       </button>
                     </Link>
                   </div>

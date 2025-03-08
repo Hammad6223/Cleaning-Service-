@@ -47,29 +47,38 @@ const Price = () => {
         >
           {/* Service Details */}
           <div className="text-center d-flex flex-column gap-3">
-            {[
-              {
-                label: "Selected Area per sq. ft",
-                value: `${data.sqft} sq. ft.`,
-              },
-              {
-                label: "Service Name",
-                value: data.service?.serviceName || "N/A",
-              },
-              {
-                label: "Number of Cleaner",
-                value: `${data.service?.requiredStaff || "N/A"} Cleaner`,
-              },
-              {
-                label: "Cleaning Time",
-                value: data.service?.cleaningTime || "N/A",
-              },
-            ].map((item, index) => (
-              <p key={index} className="fs-5 fw-semibold mb-0">
-                {item.label}:{" "}
-                <span className="text-primary fw-normal">{item.value}</span>
-              </p>
-            ))}
+          {[
+  {
+    label: "Selected Area per sq. ft",
+    value: `${data.sqft} sq. ft.`,
+  },
+  {
+    label: "Service Name",
+    value: data.service?.serviceName || "N/A",
+  },
+  {
+    label: "Number of Cleaner",
+    value: `${data.service?.requiredStaff || "N/A"} Cleaner`,
+  },
+  {
+    label: "Cleaning Time",
+    value: data.service?.cleaningTime || "N/A",
+  },
+  data.isMonthly
+    ? {
+        label: "Days per week",
+        value: data.isDay,
+      }
+    : null,
+]
+  .filter(Boolean) // Removes null values
+  .map((item, index) => (
+    <p key={index} className="fs-5 fw-semibold mb-0">
+      {item.label}:{" "}
+      <span className="text-primary fw-normal">{item.value}</span>
+    </p>
+  ))}
+
           </div>
           {/* Services Section */}
           {data.service?.services && (
@@ -109,13 +118,13 @@ const Price = () => {
             </p>
           </div>
         </div>
-        <div className="mt-4">
-          <p className="fw-normal text-start fs-6 mx-5 d-flex align-items-center">
-            <img src={Info} alt="" className="me-2" />
-            This is not the accurate price. Visit the area to get the exact
-            price.
-          </p>
-        </div>
+        <div className="mt-4 w-100" style={{ maxWidth: "1062px" }}>
+  <p className="fw-normal text-muted text-start fs-6 px-4 d-flex align-items-center">
+    <img src={Info} alt="Info Icon" className="me-2" width="20" height="20" />
+    The price provided is simply an estimate based on general parameters; a detailed site walkthrough is necessary to assess specific conditions and requirements before we can provide you with a binding quote.
+  </p>
+</div>
+
       </div>
     </>
   );
