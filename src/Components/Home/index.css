@@ -1,7 +1,5 @@
 .bg_image {
-  background-image: url('../../assets/Images/Bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(180deg, #2e2f84, #bd5057);
   height: calc(100vh - 70px);
   padding-top: 3rem;
   padding-bottom: 2rem;
