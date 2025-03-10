@@ -76,10 +76,10 @@ const OnetimeInputScreen = () => {
 
       {/* Space Size Selection */}
       <div className="text-center text-white">
-        <p className="fw-medium space-text" style={{ fontSize: "40px" }}>
+        <p className="fw-medium space-text mb-0" style={{ fontSize: "40px" }}>
           Enter Your Space Size (Sq. Ft.)
         </p>
-        <div className="d-flex align-items-center justify-content-center mt-4">
+        <div className="d-flex align-items-center justify-content-center mt-3">
           <button
             className="border-0 rounded text-center d-flex align-items-center justify-content-center"
             onClick={handleDecrease}
