@@ -10,6 +10,7 @@ const OnetimeInputScreen = () => {
 
   const handleDecrease = useCallback(() => {
     setData((prev) => {
+      const newValue = Math.max(500, Number(prev) - 100);
       return newValue.toString();
     });
   }, []);

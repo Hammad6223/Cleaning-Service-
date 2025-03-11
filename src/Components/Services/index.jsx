@@ -7,6 +7,7 @@ import { MdOutlineDone, MdAccessTime } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { Link } from "react-router-dom";
 import Info from "../../assets/Images/Info-img.png";
+import Swal from "sweetalert2";
 import "./index.css";
 
 const useQuery = () => {
@@ -147,7 +148,7 @@ const OneTimeServices = () => {
                       />
                     </Row>
 
-                    <Link
+                    {/* <Link
                       to={`/price?sqft=${sqft}&isMonthly=${isMonthly}&isDay=${selectedDay}&isService=${encodeURIComponent(
                         JSON.stringify(service)
                       )}`}
@@ -155,7 +156,28 @@ const OneTimeServices = () => {
                       <button className="get-quote-btn animated-button">
                       View Estimate
                       </button>
-                    </Link>
+                    </Link> */}
+
+                    <button
+  className="get-quote-btn animated-button"
+  onClick={(e) => {
+    if (isMonthly && !selectedDay) {
+      e.preventDefault(); // Prevent navigation
+      Swal.fire({
+        icon: "warning",
+        title: "Day Required",
+        text: "Please select the number of cleaning days before proceeding.",
+        confirmButtonColor: "#3085d6",
+      });
+    } else {
+      window.location.href = `/price?sqft=${sqft}&isMonthly=${isMonthly}&isDay=${selectedDay}&isService=${encodeURIComponent(
+        JSON.stringify(service)
+      )}`;
+    }
+  }}
+>
+  View Estimate
+</button>
                   </div>
                   <CheckmarkBadge />
                 </div>
