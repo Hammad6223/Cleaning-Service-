@@ -8,6 +8,7 @@ import { GoPeople } from "react-icons/go";
 import { Link } from "react-router-dom";
 import Info from "../../assets/Images/Info-img.png";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 const useQuery = () => {
@@ -50,6 +51,7 @@ const getMonthlyServices = (sqft) => {
 
 const OneTimeServices = () => {
   const query = useQuery();
+  const navigate = useNavigate();
   const sqft = parseInt(query.get("sqft"), 10);
   const isMonthly = query.get("isMonthly") === "true";
   const [filteredServices, setFilteredServices] = useState([]);
@@ -158,11 +160,10 @@ const OneTimeServices = () => {
                       </button>
                     </Link> */}
 
-                    <button
+<button
   className="get-quote-btn animated-button"
   onClick={(e) => {
     if (isMonthly && !selectedDay) {
-      e.preventDefault(); // Prevent navigation
       Swal.fire({
         icon: "warning",
         title: "Day Required",
@@ -170,14 +171,17 @@ const OneTimeServices = () => {
         confirmButtonColor: "#3085d6",
       });
     } else {
-      window.location.href = `/price?sqft=${sqft}&isMonthly=${isMonthly}&isDay=${selectedDay}&isService=${encodeURIComponent(
-        JSON.stringify(service)
-      )}`;
+      navigate(
+        `/price?sqft=${sqft}&isMonthly=${isMonthly}&isDay=${selectedDay}&isService=${encodeURIComponent(
+          JSON.stringify(service)
+        )}`
+      );
     }
   }}
 >
   View Estimate
 </button>
+
                   </div>
                   <CheckmarkBadge />
                 </div>
